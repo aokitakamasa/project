@@ -4,4 +4,4 @@
 
 Here is our new project description
 
-..*BredSoba4ij 
+*BredSoba4ij 
