@@ -1,5 +1,5 @@
 ## Project
 
 #### Student:
-⋅⋅* Muha Oleh.
-..* BredSoba4ij 
+* Muha Oleh.
+* BredSoba4ij 
