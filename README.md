@@ -1,7 +1,5 @@
 ## Project
 
-#first shared repo
-
-####Student:
+#### Student:
 ⋅⋅* Muha Oleh.
 ..* BredSoba4ij 
