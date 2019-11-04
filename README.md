@@ -1,5 +1,5 @@
 ## Project
 
 #### Student:
-* Miha Oleh.
+* Miha Oleh КРУТ!!!!.
 * BredSoba4ij 
