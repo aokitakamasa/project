@@ -1,5 +1,5 @@
 ## Project
 
 #### Student:
-* Miha Oleh.
+* Igor.
 * BredSoba4ij 
