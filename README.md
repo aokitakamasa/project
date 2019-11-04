@@ -4,3 +4,4 @@
 
 Here is our new project description
 
+.*Ihor Kotliar
