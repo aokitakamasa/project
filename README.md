@@ -5,6 +5,8 @@ as## Project
 .*Ihor Kotliar
 
 
+* Maryna Kuvshynova. 
+
 * Miha Oleh
 
 * BredSoba4ij
