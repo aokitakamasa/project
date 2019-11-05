@@ -7,9 +7,14 @@ as## Project
 
 * Maryna Kuvshynova. 
 
+* Maryna Kuvshynova.
+
 * Miha Oleh
 
-* BredSoba4ij
+* Gritsenko Grisha
+
+* Bredsoba4ij
 
 Here is our new project description
 
+Олег - Мего крут!!!!!
