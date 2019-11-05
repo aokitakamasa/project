@@ -4,3 +4,5 @@
 
 Here is our new project description
 
+* Maryna Kuvshynova. 
+
