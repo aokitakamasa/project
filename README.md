@@ -6,4 +6,5 @@ Here is our new project description
 
 .*Ihor Kotliar
 
-*BredSoba4ij
+
+* BredSoba4ij
