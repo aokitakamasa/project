@@ -7,6 +7,7 @@
 
 * Miha Oleh
 
+* Gritsenko Grisha
+
 Here is our new project description
 
-* Gritsenko
