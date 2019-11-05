@@ -8,4 +8,8 @@
 * Maryna Kuvshynova.
 * Miha Oleh
 
+* Gritsenko Grisha
+
 Here is our new project description
+
+Олег - Мего крут!!!!!
