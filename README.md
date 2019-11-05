@@ -2,7 +2,9 @@
 
 #first shared repo
 
-Here is our new project description
 
 * Maryna Kuvshynova. 
 
+* Miha Oleh
+
+Here is our new project description
