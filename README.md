@@ -2,9 +2,12 @@ as## Project
 
 #first shared repo
 
-Here is our new project description
-
 .*Ihor Kotliar
 
 
+* Miha Oleh
+
 * BredSoba4ij
+
+Here is our new project description
+
