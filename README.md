@@ -1,1 +1,2 @@
 # Project members
+* Maryna Kuvshynova
