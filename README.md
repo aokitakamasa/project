@@ -1,1 +1,3 @@
 # Project members
+
+* Miha Oleh
