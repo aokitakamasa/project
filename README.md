@@ -1,5 +1,5 @@
 # Project members
-
+* Vladyslav Yurchenko #1
 * Miha Oleh
 * Danila
 * Ihor Kotliar
