@@ -3,6 +3,7 @@ let result2 = '';
 let currOperation = '';
 let fill = false;
 let input = null;
+let history = document.getElementById('history');
 let calc = document.getElementById('calculator');
 let move = false;
 
@@ -79,7 +80,7 @@ function process(val, id = 'input') {
             result2 = '';
         }
     }
-
+    history.innerHTML = result1.toString() + currOperation + result2.toString();
     if(input.innerHTML === '666'){
             calc.style = 'margin: '+ Math.floor(Math.random() * 600) + 'px ' + Math.floor(Math.random() * 200) + 'px;'
             result1 = '';
