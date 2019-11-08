@@ -1,0 +1,68 @@
+body {
+    background-color: gray;
+}
+.number {
+    background-color: aqua;
+    height: 60px;
+    width: 60px;
+    float: left;
+    border-radius:15px;
+}
+.other {
+    background-color: indianred;
+    border-radius:15px;
+    padding: 10px;
+}
+#numbers {
+    height: 250px;
+    width: 200px;
+    display: inline-block;
+}
+#sumbols {
+    height: 250px;
+    width: 70px;
+    display: inline-block;
+}
+#buttonAll {
+    height: 300px;
+    width: 300px;
+}
+#calc {
+    background-color: teal;
+    height: 400px;
+    width: 300px;
+    text-align: center;
+}
+#ekran {
+    height: 30px;
+    width: 275px;
+    background-color: wheat;
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 5px;
+}
+#vvodFirst {
+    height: 20px;
+    width: 100px;
+    margin-bottom: 20px;
+
+    text-align: right;
+    padding-right: 5px;
+}
+#vvodTwo {
+    height: 20px;
+    width: 100px;
+    margin-bottom: 20px;
+
+    text-align: right;
+    padding-right: 5px;
+}
+#vvodZnak {
+    height: 20px;
+    width: 25px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    padding-right: 2px;
+}
+

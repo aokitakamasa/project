@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="SHORTCUT ICON" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../src/style/style.css">
+</head>
+<body>
+    <div id="calc">
+        <input type="text" id="ekran" disabled value=""/> 
+        <input  type="text" id="vvodFirst" value="0"/>
+        <input  type="text" id="vvodZnak" value="+"/>
+        <input  type="text" id="vvodTwo" value="0"/>
+
+        <div id="buttonAll">
+            <div id="numbers">
+                <button type="button" class="number" onclick="pressButton(1)">1</button>
+                <button type="button" class="number" onclick="pressButton(2)">2</button>
+                <button type="button" class="number" onclick="pressButton(3)">3</button>
+                <button type="button" class="number" onclick="pressButton(4)">4</button>
+                <button type="button" class="number" onclick="pressButton(5)">5</button>
+                <button type="button" class="number" onclick="pressButton(6)">6</button>
+                <button type="button" class="number" onclick="pressButton(7)">7</button>
+                <button type="button" class="number" onclick="pressButton(8)">8</button>
+                <button type="button" class="number" onclick="pressButton(9)">9</button>
+                <button type="button" class="number" onclick="pressButton('.')">.</button>
+                <button type="button" class="number" onclick="pressButton(0)">0</button>
+                <button type="button" class="number" onclick="rezult()">=</button>
+            </div>
+            <div id="sumbols">
+                <button type="button" class="number" onclick="pressButtonZnak('+')">+</button>
+                <button type="button" class="number" onclick="pressButtonZnak('-')">-</button>
+                <button type="button" class="number" onclick="pressButtonZnak('*')">*</button>
+                <button type="button" class="number" onclick="pressButtonZnak('/')">/</button>
+            </div>
+                <button type="button" class="other" onclick="firstOrSecond(true)">First number</button>
+                <button type="button" class="other" onclick="Clear()">C</button>
+                <button type="button" class="other" onclick="firstOrSecond(false)">Second number</button>
+        </div>
+</div>
+    <script src="../src/js/script.js"></script>
+</body>
+</html>
