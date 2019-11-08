@@ -8,6 +8,33 @@
     <link rel="stylesheet" type="text/css" href="../src/style/style.css">
 </head>
 <body>
+        <div id="calculator">
+                <!-- Screen and clear key -->
+                <div class="top">
+                    <span class="clear" onclick="process('c')">C</span>
+                    <div class="screen" id="input"></div>
+                </div>
+                
+                <div class="keys">
+                    <!-- operators and other keys -->
+                    <span onclick="process(7)">7</span>
+                    <span onclick="process(8)">8</span>
+                    <span onclick="process(9)">9</span>
+                    <span onclick="process('+')" class="operator">+</span>
+                    <span onclick="process(4)">4</span>
+                    <span onclick="process(5)">5</span>
+                    <span onclick="process(6)">6</span>
+                    <span onclick="process('-')" class="operator">-</span>
+                    <span onclick="process(1)">1</span>
+                    <span onclick="process(2)">2</span>
+                    <span onclick="process(3)">3</span>
+                    <span onclick="process('/')" class="operator">÷</span>
+                    <span onclick="process(0)">0</span>
+                    <span onclick="process('=')" class="eval" style="width: 48%;">=</span>
+                    <span onclick="process('*')" class="operator">x</span>
+                </div>
+            </div>
+            
     <script src="../src/js/script.js"></script>
 </body>
 </html>
