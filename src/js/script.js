@@ -12,6 +12,7 @@ function process(val, id = 'input') {
          result1 = '';
          result2 = '';
          currOperation = '';
+         history.innerHTML = '';
          fill = false;
         input.innerHTML = 0;
         return;
@@ -52,7 +53,7 @@ function process(val, id = 'input') {
         input.innerHTML = val;
         fill = true;
     }
-    
+
     history.innerHTML = result1.toString() + currOperation + result2.toString();
     if(result1.length>0&&result2.length>0&& val === '='){
         if(currOperation == '+'){
@@ -65,18 +66,18 @@ function process(val, id = 'input') {
             result1 = (parseInt(result1, 10) - parseInt(result2, 10)).toString();
             result2 = '';
         }
-        
         else if(currOperation == '/'){
-            input.innerHTML  = (parseInt(result1, 10) / parseInt(result2, 10));
-            result1 = (parseInt(result1, 10) / parseInt(result2, 10)).toString();
-            result2 = '';
-        }
-        else if(currOperation == '*'){
             if(parseInt(result2,10) == 0)
             {
                 alert('Nelzya delit na 0!!');
                 return;
             }
+            input.innerHTML  = (parseInt(result1, 10) / parseInt(result2, 10));
+            result1 = (parseInt(result1, 10) / parseInt(result2, 10)).toString();
+            result2 = '';
+        }
+        else if(currOperation == '*'){
+           
             input.innerHTML  = (parseInt(result1, 10) * parseInt(result2, 10));
             result1 = (parseInt(result1, 10) * parseInt(result2, 10)).toString();
             result2 = '';
