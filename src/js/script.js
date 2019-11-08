@@ -52,6 +52,8 @@ function process(val, id = 'input') {
         input.innerHTML = val;
         fill = true;
     }
+    
+    history.innerHTML = result1.toString() + currOperation + result2.toString();
     if(result1.length>0&&result2.length>0&& val === '='){
         if(currOperation == '+'){
             input.innerHTML  = (parseInt(result1, 10) + parseInt(result2, 10));
@@ -80,7 +82,6 @@ function process(val, id = 'input') {
             result2 = '';
         }
     }
-    history.innerHTML = result1.toString() + currOperation + result2.toString();
     if(input.innerHTML === '666'){
             calc.style = 'margin: '+ Math.floor(Math.random() * 600) + 'px ' + Math.floor(Math.random() * 200) + 'px;'
             result1 = '';
