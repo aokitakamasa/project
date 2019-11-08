@@ -104,7 +104,7 @@ function Calculator(id, id_operation_block) {
             } else {
                 this.y = Number('' + this.y + val);
             }
-        } else if (!isNaN(this.x) && !this.sumble && isNaN(val) && val != "=") {
+        } else if (!isNaN(this.x) && isNaN(this.y) && isNaN(val) && val != "=") {
             console.log('Заполнение символа');
             // Заполнение символа
             this.sumble = val;
