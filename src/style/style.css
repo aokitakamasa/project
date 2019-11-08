@@ -1,3 +1,102 @@
 body {
-    background-color: magenta;
+    margin: 0;
+    padding: 0;
+    
 }
+#wrapper{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #b4ddb4; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.wrapper-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+#calculator-box{
+    padding: 5px;
+    display: flex;
+    background: #3a4655;
+    width: 90%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px #002400;
+    flex-wrap: wrap;
+}
+#calculator-box .text-box{
+    padding: 0 10px;
+    background: #404D5E;
+    border-radius:10px;
+    border: 5px solid #3C4857;
+    position: relative;
+}
+.text-box .small_text{
+    width: 100%;
+    display: block;
+    height: 15px;
+    text-align: right;
+    color: #727B86;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: dotted 1px;
+}
+.text-box input{
+    height: 60px;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+    font-size: 45px;
+    border: 0;
+    text-align: right;
+    background: none;
+    box-sizing: border-box;
+}
+#calculator-box .button-box{
+    width: 100%;
+    display: flex;
+}
+.button-box .col{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+}
+.button-box .col:first-child{
+    width: 75%;
+}
+.button-box .col:last-child button{width: 100%;}
+button {
+    outline: none !important;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 33.3%;
+    border-radius:10px;
+    background: #425062;
+    color: #fff;
+    font-size: 20px;
+    border: 5px solid #3C4857;
+    transition: all 0.2s ease-in-out;
+    min-height: 50px;
+}
+button:hover{
+    background: #52b152;
+    transform: rotate(5deg);
+    cursor: pointer;
+}
+.wide_button{
+    width: 66.6% !important;
+}
+.high_button{
+    height: 150px;
+}
+
+

@@ -8,6 +8,41 @@
     <link rel="stylesheet" type="text/css" href="../src/style/style.css">
 </head>
 <body>
+    <div id="wrapper">
+        <div class="wrapper-holder">
+            <div id="calculator-box">
+                <div class="text-box">
+                        <span class="small_text"></span>
+                        <input name="textEnter" type="text" disabled value="">
+                </div>
+                <div class="button-box">
+                    <div class="col">
+                        <button type="button" class="grey_button" value="C" onclick="buttonClick(this.value)">C</button>
+                        <button type="button" class="grey_button" value="+" onclick="buttonClick(this.value)">+</button>
+                        <button type="button" class="grey_button" value="-" onclick="buttonClick(this.value)">-</button>
+                        <button type="button" value="7" onclick="buttonClick(this.value)">7</button>
+                        <button type="button" value="8" onclick="buttonClick(this.value)">8</button>
+                        <button type="button" value="9" onclick="buttonClick(this.value)">9</button>
+                        <button type="button" value="6" onclick="buttonClick(this.value)">6</button>
+                        <button type="button" value="5" onclick="buttonClick(this.value)">5</button>
+                        <button type="button" value="4" onclick="buttonClick(this.value)">4</button>
+                        <button type="button" value="3" onclick="buttonClick(this.value)">3</button>
+                        <button type="button" value="2" onclick="buttonClick(this.value)">2</button>
+                        <button type="button" value="1" onclick="buttonClick(this.value)">1</button>
+                        <button type="button" value="0" onclick="buttonClick(this.value)" class="wide_button">0</button>
+                        <button type="button" value="+/-" onclick="buttonClick(this.value)">+/-</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="grey_button" value="/" onclick="buttonClick(this.value)">/</button>
+                        <button type="button" class="grey_button" value="*" onclick="buttonClick(this.value)">*</button>
+                        <button type="button" class="high_button" value="=" onclick="buttonClick(this.value)">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="../src/js/script.js"></script>
 </body>
 </html>
