@@ -42,6 +42,12 @@ function process(val, id = 'input') {
         }
     else if(val != '='){
         currOperation = val;
+        if(currOperation == '√'){
+            input.innerHTML  = Math.sqrt(parseInt(input.innerHTML));
+            result1 = Math.sqrt(parseInt(input.innerHTML)).toString();
+            result2 = '';
+            return;
+        }
         input.innerHTML = val;
         fill = true;
     }
@@ -62,7 +68,6 @@ function process(val, id = 'input') {
             result1 = (parseInt(result1, 10) / parseInt(result2, 10)).toString();
             result2 = '';
         }
-        
         else if(currOperation == '*'){
             if(parseInt(result2,10) == 0)
             {
