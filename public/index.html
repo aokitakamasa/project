@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculator</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../src/style/style.css">
 </head>
 <body>
+
+    <div class="container">
+        <div class="calc_block row no-gutters">
+
+            <div class="col-12 main_input">
+                <div id="input_calc_operation" class="opertion"></div>
+                <input id="input_calc" type="text" disabled value="0">
+            </div>
+
+            <div class="col-3 button_block button_block"><button type="button" class="btn btn-danger" onclick="calc.clear()">C</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-danger" onclick="calc.clickButton('+/-')">+/-</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-danger" onclick="calc.clickButton('√')">√</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-danger" onclick="calc.clickButton('/')">&divide;</button></div>
+
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('7')">7</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('8')">8</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('9')">9</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-warning" onclick="calc.clickButton('*')">*</button></div>
+
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('4')">4</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('5')">5</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('6')">6</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-warning" onclick="calc.clickButton('-')">-</button></div>
+
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('1')">1</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('2')">2</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('3')">3</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-warning" onclick="calc.clickButton('+')">+</button></div>
+
+            <div class="col-6 button_block"><button type="button" class="btn btn-success" onclick="calc.clickButton('0')">0</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-warning" onclick="calc.clickButton('.')" disabled>.</button></div>
+            <div class="col-3 button_block"><button type="button" class="btn btn-warning" onclick="calc.clickButton('=')">=</button></div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../src/js/script.js"></script>
 </body>
 </html>

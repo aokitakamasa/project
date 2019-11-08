@@ -1,3 +1,26 @@
-body {
-    background-color: magenta;
+.calc_block {
+    max-width: 300px;
+    margin: 200px auto;
+}
+.button_block .btn {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    margin: 5px;
+}
+.main_input input {
+    width: calc(100% - 10px);
+    height: 50px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 0 15px;
+    text-align: right;
+}
+
+.opertion {
+    padding: 0 10px;
+    text-align: right;
+    font-size: 14px;
+    color: #ccc;
+    height: 21px;
 }
