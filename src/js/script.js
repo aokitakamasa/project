@@ -1,79 +1,105 @@
-let result = NaN;
-let numberValue1 = NaN;
-let numberValue2 = NaN;
-let resultString = "";
-let currentValue = "";
-let operation = "";
-let textInput = document.getElementsByName("textEnter")[0];
-let textResulteLine = document.getElementsByClassName("small_text")[0];
+class Calculator{
+    constructor(){
+        this.operation = "";
+        this.currentValue = "";
+        this.result = NaN;
+        this.numberValue1 = NaN;
+        this.numberValue2 = NaN;
+    }
 
-//function for button
-function buttonClick(value){
-    // resultString += `${value}`;
-    // textResulteLine.innerHTML = resultString;
+    //function addition
+    addFunction(number1, number2){
+        this.result = number1 + number2;
+        this.clearFunction();
+    }
 
-    if(!isNaN(value)){
-        currentValue += value;
-        textInput.value = currentValue;
-    } else{
-        if(value == '+/-'){
-            currentValue  = -1 * +currentValue;
-            textInput.value = currentValue;
+    //function subtraction
+    subFunction(number1, number2){
+        this.result = number1 - number2;
+        this.clearFunction();
+    }
+
+    //function multiplication
+    mulFunction(number1, number2){
+        this.result = number1 * number2;
+        this.clearFunction();
+    }
+
+    //function division
+    divFunction(number1, number2){
+        if(!number2){
+            this.result = number1 / number2;
+            this.clearFunction();
         }
-        (isNaN(numberValue1)) ? numberValue1 = +currentValue : numberValue2 = +currentValue;
-        if(value == 'C'){
-            result = NaN;
-            textInput.value = "";
-            numberValue1 = result;
-            currentValue = "";
-            operation = "";
-            numberValue2 = NaN;
-            resultString = "";
-            textResulteLine.innerHTML = resultString;
-        }else if(value != '='){
-            operation = value == "+/-" ? "": value;
-            textInput.value = (currentValue) ? currentValue : numberValue1;
-
-            resultString += `${currentValue}  ${operation}`;
-            textResulteLine.innerHTML = resultString;
-            currentValue = "";
-        } else {
-                switch(operation){
-                case "+":
-                    result = numberValue1 + numberValue2;
-                break;
-                case "-":
-                    result  = numberValue1 - numberValue2;
-                break;
-                case "*":
-                    result  = numberValue1 * numberValue2;
-                break;
-                case "/":
-                    {
-                        if(numberValue2 === 0)
-                        {   
-                            alert("Division by zero");
-                            console.error("Division by zero");
-                            operation = "";
-                            result = numberValue1;
-                        }
-                        else{
-                            result  = numberValue1 / numberValue2;
-                        }
-                    }
-                break;
-            }
-            resultString += `${numberValue2} =`;
-            textResulteLine.innerHTML = resultString;
-            
-            numberValue1 = result;
-            resultString = result
-            textInput.value = result;
-            currentValue = "";
-            operation = "";
-            numberValue2 = NaN;
-            
+        else{
+            console.error("Division by zero is not possible");
+            this.clearFunction();
         }
     }
-};
+
+    //function calculator cleaning
+    cleanCalcFunction(){
+        this.operation = "";
+        this.currentValue = "";
+        this.result = NaN;
+        this.numberValue1 = NaN;
+        this.numberValue2 = NaN;
+    }
+
+    //function cleaning
+    clearFunction(){
+        this.operation = "";
+        this.result = NaN;
+    }
+
+    //function cleaning after operation
+    clearAfterOperFunction(){
+        this.numberValue1 = this.result;
+        this.result = NaN;
+        this.numberValue2 = NaN;
+    }
+
+    //function number formation
+    numberFunction(number){
+        if(this.currentValue.length == 0 && number == 0) return;
+        this.currentValue += number;
+    }
+
+    //function operator click
+    operatorFunction(operator){
+        this.operation = operator;
+        if (isNaN(this.numberValue1))
+        {
+            this.numberValue1 = +this.currentValue;
+            this.numberValue2 = +this.currentValue;
+        } else{
+            this.numberValue2 = +this.currentValue;
+        }
+        this.currentValue = "";
+    }
+
+    //function calculation
+    calcFunction(){
+        if(operation){
+            switch(operation){
+                case "+":
+                    addFunction(this.numberValue1, this.numberValue2);
+                    break;
+                case "-":
+                    addFunction(this.numberValue1, this.numberValue2);
+                    break;
+                case "*":
+                    addFunction(this.numberValue1, this.numberValue2);
+                    break;
+                case "/":
+                    addFunction(this.numberValue1, this.numberValue2);
+                    break;
+            }
+        }
+    }
+}
+
+//calculator implementation
+let calc = new Calculator();
+
 
