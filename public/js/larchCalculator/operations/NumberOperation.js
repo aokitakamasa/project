@@ -5,6 +5,7 @@ export class NumberOperation {
         this.symbol = number == null ? null : number.toString();
         this.operator = number;
         this.isNumber = true;
+        this.isValueMutation = true;
     }
 
     operate(calcData) {

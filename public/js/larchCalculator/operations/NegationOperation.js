@@ -3,6 +3,7 @@ export class NegationOperation {
     constructor() {
         this.name = 'negation';
         this.symbol = '±';
+        this.isValueMutation = true;
     }
 
     operate(calcData) {

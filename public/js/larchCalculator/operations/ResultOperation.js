@@ -8,8 +8,12 @@ export class ResultOperation {
     }
 
     operate(calcData) {
-        if (calcData.value != null)
+        if (calcData.performedOperations.length === 0) {
+            return calcData;
+        }
+        if (calcData.value != null) {
             calcData.performedOperations.push(new NumberOperation(calcData.value));
+        }
         calcData.valueToDisplay = Math.floor(eval(this.getOperationsString(calcData.performedOperations)));
         calcData.performedOperations = [];
         calcData.value = null;

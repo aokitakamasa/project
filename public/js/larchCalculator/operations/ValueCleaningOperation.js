@@ -3,6 +3,7 @@ export class ValueCleaningOperation {
     constructor() {
         this.name = 'valueCleaning';
         this.symbol = 'CE';
+        this.isValueMutation = true;
     }
 
     operate(calcData) {

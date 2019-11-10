@@ -9,6 +9,12 @@ export class LarchCalc {
         return new CalcData(this.value, this.valueToDisplay, this.performedOperations);
     }
 
+    set calcData(calcData) {
+        this.value = calcData.value;
+        this.valueToDisplay = calcData.valueToDisplay;
+        this.performedOperations = calcData.performedOperations;
+    }
+
     get operationsString() {
 
         let result = '';
@@ -21,40 +27,57 @@ export class LarchCalc {
     }
 
     constructor(operations = []) {
-        this.operations = [...operations, ...DefaultOperations.map(o => new o()), ...this.getNumberOperations(9)];
+        this.operations = [
+            ...operations, 
+            ...DefaultOperations.map(o => new o()), 
+            ...this.getNumberOperations(9)
+        ];
         this.performedOperations = [];
         this.value = 0;
         this.valueToDisplay = this.value;
     }
 
     performOperation(operation) {
-        let isResultOperation = operation instanceof ResultOperation;
-
+        
         let operationResult = operation.operate(this.calcData);
 
-        let result = new ResultOperation().operate(new CalcData(
-            operationResult.value,
-            operationResult.valueToDisplay,
-            [...operationResult.performedOperations]
-        ));
-
-        if (isFinite(isResultOperation ? operationResult.valueToDisplay : result.valueToDisplay)) {
-            this.value = operationResult.value;
-            if (operation.isOperator) {
-                this.valueToDisplay = result.valueToDisplay;
+        if (operation instanceof ResultOperation || operation.isValueMutation) {
+            
+            if (isFinite(operationResult.valueToDisplay)) {
+                this.calcData = operationResult;
             }
             else {
-                this.valueToDisplay = operationResult.valueToDisplay;
+                this.setError(operationResult);
             }
-            this.performedOperations = operationResult.performedOperations;
         }
         else {
-            this.value = null;
-            this.valueToDisplay = 'Error - division by zero';
-            this.performedOperations = [];
+            let result = new ResultOperation().operate(new CalcData(
+                operationResult.value,
+                operationResult.valueToDisplay,
+                [...operationResult.performedOperations]
+            ));
+
+            if (isFinite(result.valueToDisplay)) {
+                this.value = operationResult.value;
+                this.valueToDisplay = result.valueToDisplay;
+                this.performedOperations = operationResult.performedOperations;
+            }
+            else {
+                this.setError(operationResult);
+            }
         }
     }
 
+    setError(result) {
+        this.value = null;
+        if (result.valueToDisplay == Infinity) {
+            this.valueToDisplay = 'Error - division by zero';
+        }
+        else {
+            this.valueToDisplay = 'Unknown error';
+        }
+        this.performedOperations = [];
+    }
     getNumberOperations(to, from = 0) {
         let operations = [];
         for (let i = from; i <= to; i++) {

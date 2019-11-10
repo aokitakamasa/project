@@ -3,6 +3,7 @@ export class BackspaceOperation {
     constructor() {
         this.name = 'backspace';
         this.symbol = '⌫';
+        this.isValueMutation = true;
     }
 
     operate(calcData) {
