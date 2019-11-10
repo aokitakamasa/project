@@ -18,12 +18,13 @@
         import { LarchCalc } from './js/larchCalculator/LarchCalc.js'
 
         let calc = new LarchCalc();
-
-        putButtons(document.querySelector('#calc-container'), calc.operations, (calc) => {
+        let onUpdateFunc = (calc) => {
             document.querySelector('#expression').textContent = calc.operationsString;
             document.querySelector('#value').textContent = calc.valueToDisplay;
-        });
+        };
 
+        putButtons(document.querySelector('#calc-container'), calc.operations, onUpdateFunc);
+        setKeyboardEvents(calc.operations, onUpdateFunc);
         function putButtons(container, operations, onUpdate, options = { className: 'operation-button'}) {
             
             let button;
@@ -39,6 +40,22 @@
                 button.className = options.className;
                 container.append(button);
             }
+        }
+
+        function setKeyboardEvents(operations, onUpdate) {
+
+            document.addEventListener('keydown', (event) => {
+                        console.log(event.code);
+                    
+                for (let operation of operations) {
+                    
+                        if (operation.keyCodes && operation.keyCodes.indexOf(event.code) !== -1) {
+                            console.log(operation.name);
+                            calc.performOperation(operation);
+                            onUpdate(calc);
+                        }
+                }
+            });
         }
     </script>
 </body>

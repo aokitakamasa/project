@@ -4,6 +4,7 @@ export class BackspaceOperation {
         this.name = 'backspace';
         this.symbol = '⌫';
         this.isValueMutation = true;
+        this.keyCodes = ['Backspace'];
     }
 
     operate(calcData) {

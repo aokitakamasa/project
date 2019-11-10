@@ -3,6 +3,7 @@ export class CleaningOperation {
     constructor() {
         this.name = 'cleaning';
         this.symbol = 'C';
+        this.keyCodes = ['Delete', 'NumpadDecimal'];
     }
 
     operate(calcData) {

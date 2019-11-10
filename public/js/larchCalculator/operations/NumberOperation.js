@@ -4,6 +4,7 @@ export class NumberOperation {
         this.name = 'number' + number;
         this.symbol = number == null ? null : number.toString();
         this.operator = number;
+        this.keyCodes = ['Digit' + number, 'Numpad' + number];
         this.isNumber = true;
         this.isValueMutation = true;
     }

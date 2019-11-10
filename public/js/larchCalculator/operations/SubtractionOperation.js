@@ -4,5 +4,6 @@ export class SubtractionOperation extends OperatorOperation {
 
     constructor() {
         super('subtraction', '-', '-');
+        this.keyCodes = ['Minus', 'NumpadSubtract'];
     }
 }

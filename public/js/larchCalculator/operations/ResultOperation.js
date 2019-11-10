@@ -8,6 +8,7 @@ export class ResultOperation {
         this.name = 'result';
         this.symbol = '=';
         this.isValueMutation = true;
+        this.keyCodes = ['NumpadEnter', 'Enter'];
     }
 
     operate(calcData) {

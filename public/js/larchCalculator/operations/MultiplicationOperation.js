@@ -4,5 +4,6 @@ export class MultiplicationOperation extends OperatorOperation {
 
     constructor() {
         super('multiplication', '×', '*');
+        this.keyCodes = ['NumpadMultiply'];
     }
 }
