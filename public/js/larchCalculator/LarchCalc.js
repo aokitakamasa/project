@@ -26,7 +26,7 @@ export class LarchCalc {
         return result;
     }
 
-    constructor(operations = []) {
+    constructor(operations = [], middleResultOperation = ResultOperation) {
         this.operations = [
             ...operations, 
             ...DefaultOperations.map(o => new o()), 
@@ -35,13 +35,14 @@ export class LarchCalc {
         this.performedOperations = [];
         this.value = 0;
         this.valueToDisplay = this.value;
+        this.middleResultOperation = middleResultOperation;
     }
 
     performOperation(operation) {
         
         let operationResult = operation.operate(this.calcData);
 
-        if (operation instanceof ResultOperation || operation.isValueMutation) {
+        if (operation.isValueMutation) {
             
             if (isFinite(operationResult.valueToDisplay)) {
                 this.calcData = operationResult;
@@ -51,10 +52,12 @@ export class LarchCalc {
             }
         }
         else {
-            let result = new ResultOperation().operate(new CalcData(
+            let operationsForResult = [...operationResult.performedOperations];
+            operationsForResult.pop();
+            let result = new this.middleResultOperation().operate(new CalcData(
                 operationResult.value,
                 operationResult.valueToDisplay,
-                [...operationResult.performedOperations]
+                operationsForResult
             ));
 
             if (isFinite(result.valueToDisplay)) {

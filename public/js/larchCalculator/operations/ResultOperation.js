@@ -1,10 +1,13 @@
 import { NumberOperation } from "./NumberOperation.js";
+import { OpenBracketOperation } from "./OpenBracketOperation.js";
+import { CloseBracketOperation } from "./CloseBracketOperation.js";
 
 export class ResultOperation {
 
     constructor() {
         this.name = 'result';
         this.symbol = '=';
+        this.isValueMutation = true;
     }
 
     operate(calcData) {
@@ -26,7 +29,13 @@ export class ResultOperation {
         let result = '';
 
         if (operations && operations.length > 0 && operations[operations.length - 1].isOperator) {
-            operations.pop();
+
+            let operator = operations.pop();
+
+            operations.unshift(new OpenBracketOperation());
+            operations.push(new CloseBracketOperation());
+
+            operations = [...operations, operator, ...operations];
         }
         
         for (let operation of operations) {
