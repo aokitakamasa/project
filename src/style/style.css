@@ -7,11 +7,6 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
-    background: #b4ddb4; /* Old browsers */
-    background: -moz-linear-gradient(-45deg,  #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .wrapper-holder{
     display: flex;
@@ -19,15 +14,28 @@ body {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
+    position: relative;
+}
+.picture_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url(../images/bg_picture.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    z-index: 0;
 }
 #calculator-box{
+    position: relative;
+    z-index: 2;
     padding: 5px;
     display: flex;
     background: #3a4655;
     width: 90%;
     max-width: 250px;
     border-radius: 10px;
-    box-shadow: 10px 10px 50px #002400;
+    box-shadow: 10px 10px 50px #3a4655;
     flex-wrap: wrap;
 }
 #calculator-box .text-box{
@@ -36,8 +44,11 @@ body {
     border-radius:10px;
     border: 5px solid #3C4857;
     position: relative;
+    overflow: hidden;
 }
 .text-box .small_text{
+    overflow: hidden;
+    white-space: nowrap;
     width: 100%;
     display: block;
     height: 15px;
@@ -88,9 +99,10 @@ button {
     min-height: 50px;
 }
 button:hover{
-    background: #52b152;
-    transform: rotate(5deg);
+    background: #4b5b70;
+    transform: scale(.95);
     cursor: pointer;
+    box-shadow: 0 0 10px #425062;
 }
 .wide_button{
     width: 66.6% !important;
@@ -98,5 +110,5 @@ button:hover{
 .high_button{
     height: 150px;
 }
-
+@media only screen and (max-width: 2024px){body{min-width:300px;}}
 
