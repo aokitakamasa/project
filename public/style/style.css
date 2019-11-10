@@ -1,0 +1,53 @@
+body {
+    background-color: #3C3838;
+    height: 100vh;
+    margin: 0;
+}
+
+#calc-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2px;
+    height: 100vh;
+    margin: 0;
+    grid-template-areas: 
+    'value          value       value       value'
+    'valueCleaning  cleaning    backspace   division'
+    'number7        number8     number9     multiplication'
+    'number4        number5     number6     subtraction'
+    'number1        number2     number3     addition'
+    'negation       number0     result      result'
+    ;
+}
+
+#value-container {
+    border: 1px solid black;
+    min-width: 50px;
+    height: 60px;
+    grid-area: value;
+    border-radius: 4px;
+    background: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+#value {
+    font-size: 25px;
+    font-weight: bold;
+}
+#expression {
+    font-size: 20px;
+}
+
+.operation-button {
+    height: 50px;
+    min-width: 50px;
+    background: yellow;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    line-height: 30px;
+}

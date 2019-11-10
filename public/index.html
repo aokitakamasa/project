@@ -5,9 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="../src/style/style.css">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
 </head>
 <body>
-    <script src="../src/js/script.js"></script>
+    <div id='calc-container'>
+        <div id='value-container'>
+            <div id='expression'></div>
+            <div id='value'>0</div>
+        </div>
+    </div>
+    <script type="module">
+        import { LarchCalc } from './js/larchCalculator/LarchCalc.js'
+
+        let calc = new LarchCalc();
+
+        putButtons(document.querySelector('#calc-container'), calc.operations, (calc) => {
+            document.querySelector('#expression').textContent = calc.operationsString;
+            document.querySelector('#value').textContent = calc.valueToDisplay;
+        });
+
+        function putButtons(container, operations, onUpdate, options = { className: 'operation-button'}) {
+            
+            let button;
+            for (let operation of operations) {
+                button = document.createElement('button');
+                button.addEventListener('click', () => {
+                    calc.performOperation(operation);
+                    onUpdate(calc);
+                });
+                button.name = operation.name;
+                button.textContent = operation.symbol;
+                button.style.gridArea = operation.name;
+                button.className = options.className;
+                container.append(button);
+            }
+        }
+    </script>
 </body>
 </html>
