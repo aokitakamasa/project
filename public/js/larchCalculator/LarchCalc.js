@@ -50,7 +50,7 @@ export class LarchCalc {
             this.calcData = operationResult;
         }
         else {
-            setError(operationResult);
+            this.setError(operationResult);
         }
     }
 
