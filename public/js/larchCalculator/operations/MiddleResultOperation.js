@@ -9,7 +9,7 @@ export class MiddleResultOperation {
         if (calcData.performedOperations.length === 0) {
             return calcData;
         }
-        calcData.valueToDisplay = Math.floor(eval(this.getOperationsString(calcData.performedOperations)));
+        calcData.valueToDisplay = eval(this.getOperationsString(calcData.performedOperations));
         
         return calcData;
     }

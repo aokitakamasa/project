@@ -20,7 +20,7 @@
         let calc = new LarchCalc();
         let onUpdateFunc = (calc) => {
             document.querySelector('#expression').textContent = calc.operationsString;
-            document.querySelector('#value').textContent = calc.valueToDisplay;
+            document.querySelector('#value').textContent = calc.valueString;
         };
 
         putButtons(document.querySelector('#calc-container'), calc.operations, onUpdateFunc);

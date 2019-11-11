@@ -7,6 +7,7 @@ import { NegationOperation } from "./NegationOperation.js";
 import { CleaningOperation } from "./CleaningOperation.js";
 import { ValueCleaningOperation } from "./ValueCleaningOperation.js";
 import { BackspaceOperation } from "./BackspaceOperation.js";
+import { DotOperation } from "./DotOperation.js";
 
 export let DefaultOperations = [
     AdditionOperation,
@@ -17,5 +18,6 @@ export let DefaultOperations = [
     NegationOperation,
     CleaningOperation,
     ValueCleaningOperation,
-    BackspaceOperation
+    BackspaceOperation,
+    DotOperation
 ]

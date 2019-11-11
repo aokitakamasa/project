@@ -2,7 +2,7 @@ export class NumberOperation {
 
     constructor(number) {
         this.name = 'number' + number;
-        this.symbol = number == null ? null : number.toString();
+        this.symbol = number == null ? null : number.toString().replace('.', ',');
         this.operator = number;
         this.keyCodes = ['Digit' + number, 'Numpad' + number];
         this.isNumber = true;
@@ -16,14 +16,12 @@ export class NumberOperation {
             return calcData;
         }
         
-        calcData.value = (calcData.value * 10);
-
-        if (calcData.value >= 0) {
-            calcData.value += this.operator;
+        if (calcData.value === null) {
+            calcData.value = 0;
         }
-        else {
-            calcData.value -= this.operator;
-        }
+        calcData.value = calcData.value.toString();
+        calcData.value += this.operator;
+        calcData.value = +calcData.value;
 
         calcData.valueToDisplay = calcData.value;
 

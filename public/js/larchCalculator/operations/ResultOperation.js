@@ -17,7 +17,7 @@ export class ResultOperation {
         if (calcData.value != null) {
             calcData.performedOperations.push(new NumberOperation(calcData.value));
         }
-        calcData.valueToDisplay = Math.floor(eval(this.getOperationsString(calcData.performedOperations)));
+        calcData.valueToDisplay = eval(this.getOperationsString(calcData.performedOperations));
         calcData.performedOperations = [];
         calcData.value = null;
 

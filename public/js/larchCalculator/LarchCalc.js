@@ -1,5 +1,4 @@
 import { NumberOperation } from './operations/NumberOperation.js'
-import { ResultOperation } from './operations/ResultOperation.js'
 import { MiddleResultOperation } from './operations/MiddleResultOperation.js'
 import { DefaultOperations } from './operations/DefaultOperations.js'
 import { CalcData } from './CalcData.js'
@@ -16,6 +15,9 @@ export class LarchCalc {
         this.performedOperations = calcData.performedOperations;
     }
 
+    get valueString() {
+        return new NumberOperation(this.valueToDisplay).symbol;
+    }
     get operationsString() {
 
         let result = '';
@@ -64,6 +66,7 @@ export class LarchCalc {
         this.value = null;
         this.performedOperations = [];
     }
+
     getNumberOperations(to, from = 0) {
         let operations = [];
         for (let i = from; i <= to; i++) {
