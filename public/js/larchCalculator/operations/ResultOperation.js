@@ -7,7 +7,6 @@ export class ResultOperation {
     constructor() {
         this.name = 'result';
         this.symbol = '=';
-        this.isValueMutation = true;
         this.keyCodes = ['NumpadEnter', 'Enter'];
     }
 
@@ -29,7 +28,7 @@ export class ResultOperation {
 
         let result = '';
 
-        if (operations && operations.length > 0 && operations[operations.length - 1].isOperator) {
+        if (operations[operations.length - 1].isOperator) {
 
             let operator = operations.pop();
 

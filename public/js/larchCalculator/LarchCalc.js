@@ -1,5 +1,6 @@
 import { NumberOperation } from './operations/NumberOperation.js'
 import { ResultOperation } from './operations/ResultOperation.js'
+import { MiddleResultOperation } from './operations/MiddleResultOperation.js'
 import { DefaultOperations } from './operations/DefaultOperations.js'
 import { CalcData } from './CalcData.js'
 
@@ -26,7 +27,7 @@ export class LarchCalc {
         return result;
     }
 
-    constructor(operations = [], middleResultOperation = ResultOperation) {
+    constructor(operations = []) {
         this.operations = [
             ...operations, 
             ...DefaultOperations.map(o => new o()), 
@@ -35,50 +36,32 @@ export class LarchCalc {
         this.performedOperations = [];
         this.value = 0;
         this.valueToDisplay = this.value;
-        this.middleResultOperation = middleResultOperation;
     }
 
     performOperation(operation) {
         
         let operationResult = operation.operate(this.calcData);
 
-        if (operation.isValueMutation) {
-            
-            if (isFinite(operationResult.valueToDisplay)) {
-                this.calcData = operationResult;
-            }
-            else {
-                this.setError(operationResult);
-            }
+        if (operation.isOperator) {
+            operationResult = new MiddleResultOperation().operate(operationResult);
+        }
+
+        if (isFinite(operationResult.valueToDisplay)) {
+            this.calcData = operationResult;
         }
         else {
-            let operationsForResult = [...operationResult.performedOperations];
-            operationsForResult.pop();
-            let result = new this.middleResultOperation().operate(new CalcData(
-                operationResult.value,
-                operationResult.valueToDisplay,
-                operationsForResult
-            ));
-
-            if (isFinite(result.valueToDisplay)) {
-                this.value = operationResult.value;
-                this.valueToDisplay = result.valueToDisplay;
-                this.performedOperations = operationResult.performedOperations;
-            }
-            else {
-                this.setError(operationResult);
-            }
+            setError(operationResult);
         }
     }
 
-    setError(result) {
-        this.value = null;
-        if (result.valueToDisplay == Infinity) {
+    setError(calcData) {
+        if (calcData.valueToDisplay === Infinity) {
             this.valueToDisplay = 'Error - division by zero';
         }
         else {
             this.valueToDisplay = 'Unknown error';
         }
+        this.value = null;
         this.performedOperations = [];
     }
     getNumberOperations(to, from = 0) {
