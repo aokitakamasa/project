@@ -23,50 +23,50 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-mt-4">
                 <div class="row mt-2">
                     <div class="col-sm">
-                        <input type="text" id="tablo" onchange="getInput(event);">                       
+                        <input type="text" class="form-control rounded-lg" id="tablo" onchange="getInput(event);">                       
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-sm">
-                        <button type="button" class="btn btn-primary" title="sqr" onclick="operation(this.title);">&#8730;</button>
-                        <button type="button" class="btn btn-primary" title="mod" onclick="operation(this.title);">&#37;</button>                        
-                        <button type="button" class="btn btn-primary">M</button>                        
-                        <button type="button" class="btn btn-danger" onclick="clearAll();">C</button>                        
+                        <button type="button" class="btn rounded-lg btn-primary" title="sqr" onclick="operation(event);">&#8730;</button>
+                        <button type="button" class="btn rounded-lg btn-primary" title="mod" onclick="operation(event);">&#37;</button>                        
+                        <button type="button" class="btn rounded-lg btn-primary">M</button>                        
+                        <button type="button" class="btn rounded-lg btn-danger" onclick="clearAll();">C</button>                        
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-sm">
-                        <button type="button" class="btn btn-dark digit">7</button>
-                        <button type="button" class="btn btn-dark digit">8</button>
-                        <button type="button" class="btn btn-dark digit">9</button>
-                        <button type="button" class="btn btn-primary" title="*" onclick="operation(this.title);">&#215;</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">7</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">8</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">9</button>
+                        <button type="button" class="btn rounded-lg btn-primary" title="*" onclick="operation(event);">&#215;</button>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-sm">
-                        <button type="button" class="btn btn-dark digit">4</button>
-                        <button type="button" class="btn btn-dark digit">5</button>
-                        <button type="button" class="btn btn-dark digit">6</button>
-                        <button type="button" class="btn btn-primary" title="/" onclick="operation(this.title);">&#247;</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">4</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">5</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">6</button>
+                        <button type="button" class="btn rounded-lg btn-primary" title="/" onclick="operation(event);">&#247;</button>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-sm">
-                        <button type="button" class="btn btn-dark digit">1</button>
-                        <button type="button" class="btn btn-dark digit">2</button>
-                        <button type="button" class="btn btn-dark digit">3</button>
-                        <button type="button" class="btn btn-primary" title="+" onclick="operation(this.title);">+</button>                        
+                        <button type="button" class="btn rounded-lg btn-dark digit">1</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">2</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">3</button>
+                        <button type="button" class="btn rounded-lg btn-primary" title="+" onclick="operation(event);">+</button>                        
                     </div>
                 </div>
                 <div class="row  mt-2">
                     <div class="col-sm">
-                        <button type="button" class="btn btn-dark digit">0</button>
-                        <button type="button" class="btn btn-primary">&middot;</button>                        
-                        <button type="button" title="=" class="btn btn-success">=</button>
-                        <button type="button" title="-" class="btn btn-primary">&#8722;</button>
+                        <button type="button" class="btn rounded-lg btn-dark digit">0</button>
+                        <button type="button" class="btn rounded-lg btn-primary">&middot;</button>                        
+                        <button type="button" title="=" class="btn rounded-lg btn-success" onclick="result();">=</button>
+                        <button type="button" class="btn rounded-lg btn-primary" title="-"  onclick="operation(event);">&#8722;</button>
                     </div>
                 </div>
             </div>
