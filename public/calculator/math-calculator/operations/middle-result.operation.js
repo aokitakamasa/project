@@ -1,20 +1,18 @@
 export class MiddleResultOperation {
 
-    constructor() {
-        this.isValueMutation = true;
+    operate(data, operation) {
+
+        if (!operation.isOperator || data.performedOperations.length === 0) {
+            return data;
+        }
+
+        data.value = eval(this.operationsToJavaScript(data.performedOperations));
+        data.isResult = true;
+        
+        return data;
     }
 
-    operate(calcData) {
-        
-        if (calcData.performedOperations.length === 0) {
-            return calcData;
-        }
-        calcData.valueToDisplay = eval(this.getOperationsString(calcData.performedOperations));
-        
-        return calcData;
-    }
-    
-    getOperationsString(operations) {
+    operationsToJavaScript(operations) {
 
         operations = [...operations];
         let result = '';

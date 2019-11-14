@@ -1,6 +1,6 @@
-import { NumberOperation } from "./NumberOperation.js";
-import { OpenBracketOperation } from "./OpenBracketOperation.js";
-import { CloseBracketOperation } from "./CloseBracketOperation.js";
+import { OpenBracketOperation } from "./open-bracket.operation.js";
+import { CloseBracketOperation } from "./close-bracket.operation.js";
+import { NumberOperation } from "./number.operation.js";
 
 export class ResultOperation {
 
@@ -10,21 +10,24 @@ export class ResultOperation {
         this.keyCodes = ['NumpadEnter', 'Enter'];
     }
 
-    operate(calcData) {
-        if (calcData.performedOperations.length === 0) {
-            return calcData;
+    operate(data) {
+        
+        if (data.performedOperations.length === 0) {
+            return data;
         }
-        if (calcData.value != null) {
-            calcData.performedOperations.push(new NumberOperation(calcData.value));
-        }
-        calcData.valueToDisplay = eval(this.getOperationsString(calcData.performedOperations));
-        calcData.performedOperations = [];
-        calcData.value = null;
 
-        return calcData;
+        if (!data.isResult) {
+            data.performedOperations.push(new NumberOperation(data.value));
+        }
+
+        data.value = eval(this.operationsToJavaScript(data.performedOperations)).toString();
+        data.performedOperations = [];
+        data.isResult = true;
+
+        return data;
     }
-    
-    getOperationsString(operations) {
+
+    operationsToJavaScript(operations) {
 
         let result = '';
 

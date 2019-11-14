@@ -6,8 +6,7 @@ export class CloseBracketOperation {
         this.operator = ')';
     }
 
-    operate(calcData) {
-
-        return calcData;
+    operate() {
+        throw new Error('Unimplemented');
     }
 }

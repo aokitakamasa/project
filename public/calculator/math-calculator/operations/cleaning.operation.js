@@ -6,12 +6,12 @@ export class CleaningOperation {
         this.keyCodes = ['Delete', 'NumpadDecimal'];
     }
 
-    operate(calcData) {
+    operate(data) {
         
-        calcData.value = 0;
-        calcData.valueToDisplay = calcData.value;
-        calcData.performedOperations = [];
+        data.value = '0';
+        data.isResult = false;
+        data.performedOperations = [];
 
-        return calcData;
+        return data;
     }
 }
