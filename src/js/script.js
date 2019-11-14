@@ -264,6 +264,3 @@ function outputHistoryFunction(historyText){
 
 
 
-
-
-

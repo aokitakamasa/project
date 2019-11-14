@@ -129,3 +129,81 @@ button:hover{
 }
 @media only screen and (max-width: 2024px){body{min-width:300px;}}
 
+.title{
+	display: flex;
+    margin: 0 0 10px;
+    align-items: center;
+}
+.title h1{
+	margin: 0;
+	color: #fff;
+	font-size: 30px;
+	line-height: 32px;
+	font-weight: bold;
+}
+#calculator_ico{
+	width: 70px;
+	height: 70px;
+	margin: 0 5px 0 0;
+    fill: #fff;
+}
+#calculator_ico path,
+#calculator_ico circle {
+    fill: #fff;
+    stroke-dasharray: 1800;
+    stroke: #fff;
+    opacity: 1;
+    animation: anime 5s cubic-bezier(0, 0.23, 1, .1);
+}
+
+@keyframes anime{
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+    30% {
+        opacity: 1;
+        fill: none;
+        stroke-dashoffset: 1800;
+
+    }
+    90%{
+        fill: rgba(255, 255, 255, 0);
+    }
+    100%{
+        opacity: 10;
+        fill: rgba(255, 255, 255, 1);
+        stroke-dashoffset: 0;
+    }
+}
+.text_cal{
+    width: 255px;
+    height: 30px;
+}
+.text_cal path{
+    stroke-dasharray: 1800;
+    stroke: #fff;
+    fill:#fff;
+    stroke-width: 3px;
+    opacity: 1;
+    animation: anime 5s cubic-bezier(0, 0.23, 1, .1);
+}
+
+
+
+
+
+
+
+/* #calculator_ico path:first-child{
+    stroke-dasharray: 1697;
+    stroke-dashoffset: 1697;
+    animation: anime 2s forwards;
+}
+
+@keyframes anime{
+    to{
+        stroke-dashoffset: 0;
+    }
+} */
