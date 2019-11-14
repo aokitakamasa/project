@@ -12,7 +12,6 @@ export class OperatorOperation {
 
     operate(data) {
 
-        console.log(data);
         return this.pushOperator(data);
     }
 

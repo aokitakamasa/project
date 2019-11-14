@@ -9,7 +9,10 @@ export class DotOperation {
 
     operate(data) {
         
-        if (data.value.indexOf('.') !== -1) {
+        if (data.isResult) {
+            data.value = '0';
+        } 
+        else if (data.value.indexOf('.') !== -1) {
             return data;
         }
 
